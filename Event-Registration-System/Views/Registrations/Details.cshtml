@@ -1,0 +1,27 @@
+﻿@model Event_Registration_System.Models.Registration
+
+@{
+    ViewData["Title"] = "Registration Details";
+}
+
+<h1 class="text-center my-4">@ViewData["Title"]</h1>
+
+<div class="container">
+    <h4>Registration Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ParticipantName)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.ParticipantName)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Event)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Event.EventId)</dd>
+    </dl>
+
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.RegistrationId" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
